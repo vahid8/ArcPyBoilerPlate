@@ -23,3 +23,8 @@ arcpy.AddField_management(layer_name, "Bildname", "TEXT")
 arcpy.management.JoinField(in_data, in_field, join_table, join_field, {fields})
 arcpy.management.JoinField(fc_pointsAtLine, 'OBJECTID', fc_elevationPoints, 'OBJECTID',['RASTERVALU'])
 ```
+
+### Copy feature layer from one layer to another ( filter can be applied)
+```
+CopyFeatures_management (in_features, out_feature_class, {config_keyword}, {spatial_grid_1}, {spatial_grid_2}, {spatial_grid_3})
+```
