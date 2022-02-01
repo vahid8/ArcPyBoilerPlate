@@ -9,6 +9,23 @@ arcpy.Exists(layername)
 arcpy.Delete_management(layerName)
 arcpy.Delete_management(gdbName)
 ```
+### Get available features, fields ,...
+```
+arcpy.env.workspace = gdb_path
+
+feature_list = arcpy.ListFeatureClasses()
+table_list = arcpy.ListTables("*")
+ras_list = arcpy.ListRasters()
+
+# Get the name of columns( fields) in feature layer
+fields = [f.name for f in arcpy.ListFields(feature_layer_path)]
+# Get properties of a feature layer
+desc = arcpy.Describe(item)
+print(f" shape type: {desc.shapeType}")
+print(f" feature type: {desc.featureType}")
+
+```
+
 
 ### Adding new column to layer
 ```
