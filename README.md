@@ -45,3 +45,16 @@ arcpy.management.JoinField(fc_pointsAtLine, 'OBJECTID', fc_elevationPoints, 'OBJ
 ```
 CopyFeatures_management (in_features, out_feature_class, {config_keyword}, {spatial_grid_1}, {spatial_grid_2}, {spatial_grid_3})
 ```
+### Reading and getting info about geodatabase using arcpy 
+``` 
+arcpy.env.workspace  =r"D:\EssenApp\output\ZEB1\ZEB_2019_2020_2\Bewertungsabschnitte_neu4_TUEV_1990.gdb"
+# print(f"print(arcpy.ListFeatureCLasses(aa)){arcpy.ListFeatureCLasses(aa)}")
+aa = arcpy.ListTables("*")
+bb = arcpy.ListFeatureClasses()
+print(f"arcpy.ListTables(){aa}")
+print(f"arcpy.ListFeatureClasses(){bb}")
+for feature in bb:
+    print(feature)
+    for f in arcpy.ListFields(feature):
+        print(f.name)  
+```
